@@ -109,9 +109,9 @@ public class DroneBookingResponseBuilder {
 		return listOfBookings;
 	}
 
-	public List<DroneBookingResponse> buildBookingByID(@Valid long bookingId) {
+	public DroneBookingResponse buildBookingByID(@Valid long bookingId) {
 
-		List<DroneBookingResponse> listOfBookings = droneBookingRepo.findByBookingId(bookingId);
+		DroneBookingResponse listOfBookings = droneBookingRepo.findByBookingId(bookingId);
 
 		return listOfBookings;
 	}

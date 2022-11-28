@@ -9,13 +9,12 @@ import jakarta.persistence.Id;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-//@Table(name = "dronedetails")
 public class DroneDetails {
 
 	private @Id @GeneratedValue(strategy = GenerationType.AUTO) long serviceId;
 	@NotBlank(message = "serviceType is mandatory")
 	private String serviceType;
-	@NotBlank(message = "price is mandatory")
+	//@NotBlank(message = "price is mandatory")
 	private double price;
 	@NotBlank(message = "equipment is mandatory")
 	private String equipment;
@@ -26,6 +25,10 @@ public class DroneDetails {
 	private boolean paymentMade;
 	private String status;
 	private String farmerEmail;
+	private String pilotEmail;
+	private String noOfFlightsEveryDay;
+	private String landtype;
+	private String farm;
 
 	public DroneDetails() {
 
@@ -43,7 +46,8 @@ public class DroneDetails {
 	 * @param status
 	 */
 	public DroneDetails(long serviceId, String serviceType, double price, String equipment, String brand,
-			LocalDate fromDate, LocalDate toDate, boolean paymentMade, String status, String farmerEmail) {
+			LocalDate fromDate, LocalDate toDate, boolean paymentMade, String status, String farmerEmail,
+			 String pilotEmail, String noOfFlightsEveryDay,String landtype,String farm) {
 		super();
 		this.serviceId = serviceId;
 		this.serviceType = serviceType;
@@ -55,6 +59,11 @@ public class DroneDetails {
 		this.paymentMade = paymentMade;
 		this.status = status;
 		this.farmerEmail = farmerEmail;
+		this.pilotEmail = pilotEmail;
+		this.noOfFlightsEveryDay = noOfFlightsEveryDay;
+		this.landtype = landtype;
+		this.farm = farm;
+
 	}
 
 	/**
@@ -198,6 +207,62 @@ public class DroneDetails {
 
 	public void setPaymentMade(boolean paymentMade) {
 		this.paymentMade = paymentMade;
+	}
+
+	/**
+	 * @return the pilotEmail
+	 */
+	public String getPilotEmail() {
+		return pilotEmail;
+	}
+
+	/**
+	 * @param pilotEmail the pilotEmail to set
+	 */
+	public void setPilotEmail(String pilotEmail) {
+		this.pilotEmail = pilotEmail;
+	}
+
+	/**
+	 * @return the noOfFlightsEveryDay
+	 */
+	public String getNoOfFlightsEveryDay() {
+		return noOfFlightsEveryDay;
+	}
+
+	/**
+	 * @param noOfFlightsEveryDay the noOfFlightsEveryDay to set
+	 */
+	public void setNoOfFlightsEveryDay(String noOfFlightsEveryDay) {
+		this.noOfFlightsEveryDay = noOfFlightsEveryDay;
+	}
+
+	/**
+	 * @return the landtype
+	 */
+	public String getLandtype() {
+		return landtype;
+	}
+
+	/**
+	 * @param landtype the landtype to set
+	 */
+	public void setLandtype(String landtype) {
+		this.landtype = landtype;
+	}
+
+	/**
+	 * @return the farm
+	 */
+	public String getFarm() {
+		return farm;
+	}
+
+	/**
+	 * @param farm the farm to set
+	 */
+	public void setFarm(String farm) {
+		this.farm = farm;
 	}
 
 }

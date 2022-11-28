@@ -14,7 +14,9 @@ public interface DroneBookingRepo extends JpaRepository<DroneBookingResponse, Lo
 
 	List<DroneBookingResponse> findByfarmerEmail(String farmerEmail);
 
-	List<DroneBookingResponse> findByBookingId(long bookingId);
+	DroneBookingResponse findByBookingId(long bookingId);
+	
+	//List<DroneBookingResponse> findByBookingID(long bookingId);
 
 	List<DroneBookingResponse> findBypilotEmail(@Valid String pilotEmailID);
 

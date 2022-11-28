@@ -7,7 +7,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
 public class DroneBookingRequest {
 	
 	private @Id @GeneratedValue (strategy = GenerationType.AUTO) long bookingID;
